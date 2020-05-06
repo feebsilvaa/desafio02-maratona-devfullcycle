@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post, Req, Request, Delete } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Maratona } from './maratona.model';
@@ -16,6 +16,18 @@ export class MaratonaController {
   @Get()
   async index() {
     return await this.maratonaRepo.find();
+  }
+
+  @Post()
+  async save(@Req() request: Request) {
+    const maratona = this.maratonaRepo.create(request.body as any);
+    await this.maratonaRepo.save(maratona);
+    return maratona;
+  }
+
+  @Delete("/:id")
+  async remove(@Req() request: Request) {
+    console.log(request.url)
   }
   
 }

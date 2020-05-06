@@ -6,9 +6,7 @@ export class Maratona {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({
-        length: 100
-    })
+    @Column()
     aula: string;
 
 }
