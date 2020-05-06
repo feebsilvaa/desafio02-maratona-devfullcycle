@@ -4,7 +4,7 @@ import { Injectable } from '@nestjs/common';
 export class AppService {
   getApiInfo(): any {
     const apiInfo = {
-      name: 'Desafio 02 - Api de listagem das aulas da Maratona Dev Fullcycle',
+      name: 'Desafio 03 - Comunicação WebRTC com Peer.js',
       version: '0.0.1',
       owner: 'Fernando Barbosa Silva',
       github: 'https://github.com/feebsilvaa'
